@@ -1,4 +1,4 @@
-import 'package:chatos_test_app/core/utils/errors/exceptions/unauthorized_exceptionh.dart';
+import 'package:chatos_test_app/core/utils/errors/exceptions/unauthorized_exception.dart';
 import 'package:chatos_test_app/core/utils/errors/failures/failure.dart';
 import 'package:chatos_test_app/core/utils/errors/failures/default_failure.dart';
 import 'package:chatos_test_app/core/utils/errors/failures/unauthorized_failure.dart';

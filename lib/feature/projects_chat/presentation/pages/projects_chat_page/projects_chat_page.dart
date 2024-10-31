@@ -30,7 +30,7 @@ class ProjectsChatPage extends StatelessWidget {
             centerTitle: true,
           ),
           body: Padding(
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             child: Column(
               children: [
                 Expanded(

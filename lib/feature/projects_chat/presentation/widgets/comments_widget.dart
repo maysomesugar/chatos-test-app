@@ -3,7 +3,7 @@ import 'package:chatos_test_app/feature/projects_chat/presentation/widgets/messa
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 
-class CommentsWidget extends StatelessWidget {
+class CommentsWidget extends StatefulWidget {
   final List<CommentModel> comments;
   final ScrollController controller;
   final void Function(BuildContext context, int index)? onAnswerTap;
@@ -15,31 +15,42 @@ class CommentsWidget extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) {
+  State<CommentsWidget> createState() => _CommentsWidgetState();
+}
+
+class _CommentsWidgetState extends State<CommentsWidget> {
+  @override
+  void initState() {
+    super.initState();
+
     SchedulerBinding.instance.addPostFrameCallback((_) {
-      controller.animateTo(
-        controller.position.maxScrollExtent,
+      widget.controller.animateTo(
+        widget.controller.position.maxScrollExtent,
         duration: const Duration(
           milliseconds: 300,
         ),
         curve: Curves.decelerate,
       );
     });
+  }
 
+  @override
+  Widget build(BuildContext context) {
     return ListView.separated(
-      itemCount: comments.length,
-      controller: controller,
+      itemCount: widget.comments.length,
+      controller: widget.controller,
       itemBuilder: (context, index) {
         return MessageWidget(
-          projectName: comments[index].issue?.project?.name,
-          issueName: comments[index].issue?.fields.summary,
-          answers: comments[index].answers,
-          commentAuthorName: comments[index].author.displayName,
-          issueDescription: comments[index].issue?.fields.status.desciption,
-          commentBody: comments[index].body,
+          projectName: widget.comments[index].issue?.project?.name,
+          issueName: widget.comments[index].issue?.fields.summary,
+          answers: widget.comments[index].answers,
+          commentAuthorName: widget.comments[index].author.displayName,
+          issueDescription:
+              widget.comments[index].issue?.fields.status.desciption,
+          commentBody: widget.comments[index].body,
           onAnswerTap: (context) {
-            if (onAnswerTap != null) {
-              onAnswerTap!(context, index);
+            if (widget.onAnswerTap != null) {
+              widget.onAnswerTap!(context, index);
             }
           },
         );

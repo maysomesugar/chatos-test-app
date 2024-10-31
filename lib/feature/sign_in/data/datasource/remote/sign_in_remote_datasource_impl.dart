@@ -3,7 +3,7 @@ import 'dart:io';
 
 import 'package:chatos_test_app/core/utils/constants/dotenv_keys.dart';
 import 'package:chatos_test_app/core/utils/errors/exceptions/default_exception.dart';
-import 'package:chatos_test_app/core/utils/errors/exceptions/unauthorized_exceptionh.dart';
+import 'package:chatos_test_app/core/utils/errors/exceptions/unauthorized_exception.dart';
 import 'package:chatos_test_app/core/utils/mixin/basic_auth_mixin.dart';
 import 'package:chatos_test_app/feature/sign_in/data/datasource/remote/sign_in_remote_datasource.dart';
 import 'package:chatos_test_app/feature/sign_in/data/dto/user_dto/user_dto.dart';

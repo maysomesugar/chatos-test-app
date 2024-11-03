@@ -10,7 +10,7 @@ _$CommentBodyDtoImpl _$$CommentBodyDtoImplFromJson(Map<String, dynamic> json) =>
     _$CommentBodyDtoImpl(
       type: json['type'] as String,
       content: (json['content'] as List<dynamic>)
-          .map((e) => CommentParagraphDto.fromJson(e as Map<String, dynamic>))
+          .map((e) => CommentBodyContentDto.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 

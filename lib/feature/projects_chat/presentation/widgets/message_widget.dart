@@ -1,5 +1,6 @@
 import 'package:chatos_test_app/feature/projects_chat/domain/model/comment/comment_answer_model.dart';
 import 'package:chatos_test_app/feature/projects_chat/domain/model/comment/comment_body_model.dart';
+import 'package:chatos_test_app/feature/projects_chat/presentation/widgets/jira_link_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
@@ -68,12 +69,19 @@ class MessageWidget extends StatelessWidget {
                     'ADDED COMMENT <',
                   ),
                   Column(
-                    children: List.generate(
-                      commentBody.content.length,
-                      (contentIndex) => Text(
-                        commentBody.content[contentIndex].content.first.text,
-                      ),
-                    ),
+                    children: List.generate(commentBody.content.length,
+                        (contentIndex) {
+                      final commentText = commentBody
+                              .content[contentIndex].content.isNotEmpty
+                          ? commentBody.content[contentIndex].content.first.text
+                          : '\n';
+
+                      return Text(
+                        commentText ??
+                            commentBody.content[contentIndex].content.first
+                                .attrs!.type,
+                      );
+                    }),
                   ),
                   const Text(
                     '>',
@@ -81,9 +89,7 @@ class MessageWidget extends StatelessWidget {
                 ],
               ),
             ),
-            const Text(
-              'Jira link ',
-            ),
+            const JiraLinkWidget(),
             answers.isNotEmpty
                 ? const Divider(
                     color: Colors.black,

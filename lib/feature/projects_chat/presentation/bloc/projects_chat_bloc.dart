@@ -50,7 +50,7 @@ class ProjectsChatBloc extends Bloc<ProjectsChatEvent, ProjectsChatState> {
     add(ProjectsChatEvent.getProjects(email: user.emailAddress));
 
     Timer.periodic(
-      const Duration(seconds: 10),
+      const Duration(seconds: 5),
       (_) => add(
         ProjectsChatEvent.reloadProjects(
           email: user.emailAddress,

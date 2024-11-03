@@ -21,7 +21,7 @@ CommentBodyDto _$CommentBodyDtoFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$CommentBodyDto {
   String get type => throw _privateConstructorUsedError;
-  List<CommentParagraphDto> get content => throw _privateConstructorUsedError;
+  List<CommentBodyContentDto> get content => throw _privateConstructorUsedError;
 
   /// Serializes this CommentBodyDto to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -39,7 +39,7 @@ abstract class $CommentBodyDtoCopyWith<$Res> {
           CommentBodyDto value, $Res Function(CommentBodyDto) then) =
       _$CommentBodyDtoCopyWithImpl<$Res, CommentBodyDto>;
   @useResult
-  $Res call({String type, List<CommentParagraphDto> content});
+  $Res call({String type, List<CommentBodyContentDto> content});
 }
 
 /// @nodoc
@@ -68,7 +68,7 @@ class _$CommentBodyDtoCopyWithImpl<$Res, $Val extends CommentBodyDto>
       content: null == content
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
-              as List<CommentParagraphDto>,
+              as List<CommentBodyContentDto>,
     ) as $Val);
   }
 }
@@ -81,7 +81,7 @@ abstract class _$$CommentBodyDtoImplCopyWith<$Res>
       __$$CommentBodyDtoImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String type, List<CommentParagraphDto> content});
+  $Res call({String type, List<CommentBodyContentDto> content});
 }
 
 /// @nodoc
@@ -108,7 +108,7 @@ class __$$CommentBodyDtoImplCopyWithImpl<$Res>
       content: null == content
           ? _value._content
           : content // ignore: cast_nullable_to_non_nullable
-              as List<CommentParagraphDto>,
+              as List<CommentBodyContentDto>,
     ));
   }
 }
@@ -117,7 +117,7 @@ class __$$CommentBodyDtoImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$CommentBodyDtoImpl implements _CommentBodyDto {
   const _$CommentBodyDtoImpl(
-      {required this.type, required final List<CommentParagraphDto> content})
+      {required this.type, required final List<CommentBodyContentDto> content})
       : _content = content;
 
   factory _$CommentBodyDtoImpl.fromJson(Map<String, dynamic> json) =>
@@ -125,9 +125,9 @@ class _$CommentBodyDtoImpl implements _CommentBodyDto {
 
   @override
   final String type;
-  final List<CommentParagraphDto> _content;
+  final List<CommentBodyContentDto> _content;
   @override
-  List<CommentParagraphDto> get content {
+  List<CommentBodyContentDto> get content {
     if (_content is EqualUnmodifiableListView) return _content;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_content);
@@ -171,8 +171,9 @@ class _$CommentBodyDtoImpl implements _CommentBodyDto {
 
 abstract class _CommentBodyDto implements CommentBodyDto {
   const factory _CommentBodyDto(
-      {required final String type,
-      required final List<CommentParagraphDto> content}) = _$CommentBodyDtoImpl;
+          {required final String type,
+          required final List<CommentBodyContentDto> content}) =
+      _$CommentBodyDtoImpl;
 
   factory _CommentBodyDto.fromJson(Map<String, dynamic> json) =
       _$CommentBodyDtoImpl.fromJson;
@@ -180,7 +181,7 @@ abstract class _CommentBodyDto implements CommentBodyDto {
   @override
   String get type;
   @override
-  List<CommentParagraphDto> get content;
+  List<CommentBodyContentDto> get content;
 
   /// Create a copy of CommentBodyDto
   /// with the given fields replaced by the non-null parameter values.

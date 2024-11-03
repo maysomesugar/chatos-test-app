@@ -1,0 +1,16 @@
+{
+    "self": "self",
+    "accountId": "accountId",
+    "accountType": "accountType",
+    "emailAddress": "emailAddress",
+    "avatarUrls": {
+        "48x48": "48x48",
+        "24x24": "24x24",
+        "16x16": "16x16",
+        "32x32": "32x32"
+    },
+    "displayName": "displayName",
+    "active": true,
+    "timeZone": "timeZone",
+    "locale": "locale"
+}

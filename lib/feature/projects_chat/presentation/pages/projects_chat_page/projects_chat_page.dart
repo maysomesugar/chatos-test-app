@@ -46,8 +46,10 @@ class ProjectsChatPage extends StatelessWidget {
                           comments: comments,
                           controller: scrollController,
                           onAnswerTap: (context, index) {
-                            focusedCommentId = comments[index].id;
-                            answerFocusNode.requestFocus();
+                            if (comments.isNotEmpty) {
+                              focusedCommentId = comments[index].id;
+                              answerFocusNode.requestFocus();
+                            }
                           },
                         ),
                       ProjectsChatErrorState(:final message) => Center(

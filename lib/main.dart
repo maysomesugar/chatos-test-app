@@ -1,6 +1,7 @@
 import 'package:chatos_test_app/core/router/main_router.dart';
 import 'package:chatos_test_app/core/utils/injections.dart';
 import 'package:chatos_test_app/core/utils/preloadings.dart';
+
 import 'package:flutter/material.dart';
 
 Future<void> main() async {
